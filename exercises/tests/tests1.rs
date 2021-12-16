@@ -12,6 +12,6 @@
 mod tests {
     #[test]
     fn you_can_assert() {
-        assert!();
+        assert!(1.5 + 2.3 == 3.8);
     }
 }
