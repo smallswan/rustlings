@@ -37,6 +37,22 @@ impl Default for Person {
 
 impl From<&str> for Person {
     fn from(s: &str) -> Person {
+        let fields:Vec<&str> = s.split(',').collect();
+        if fields.len() == 0{
+            Person::default()
+        }else if fields.len() == 2{
+            let (name,age) = (fields[0],fields[1]);
+            if !name.is_empty() && age.parse::<usize>().is_ok(){
+                Person{
+                    name:name.to_string(),
+                    age:age.parse::<usize>().unwrap()
+                }
+            }else{
+               Person::default()
+            }
+        }else{
+            Person::default()
+        }
     }
 }
 
