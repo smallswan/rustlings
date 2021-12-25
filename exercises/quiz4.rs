@@ -11,7 +11,6 @@ macro_rules! my_macro {
 }
 
 
-// I AM NOT DONE
 
 #[cfg(test)]
 mod tests {
